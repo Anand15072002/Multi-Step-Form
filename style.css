@@ -21,7 +21,7 @@ body {
 
 .sidebar {
     height: 550px;
-    width: 250px;
+    width: 35%;
     display: flex;
     flex-direction: column;
     background-image: url(bg-sidebar-desktop.svg);
@@ -40,7 +40,7 @@ body {
 }
 
 .sidebar a.active-step .step-number{
-    background-color: white;
+    background-color: hsl(228, 100%, 84%);
     color: hsl(243, 100%, 62%);
     border: 2px solid white;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
@@ -62,7 +62,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: hsl(228, 100%, 84%);
+    background-color: hsl(242, 100%, 63%);
     color: white;
     border-radius: 50%;
     border: 2px solid white;
@@ -83,6 +83,7 @@ p {
     display: flex;
     flex-direction: column;
     min-height: 500px;
+    width: 65%;
     justify-content: space-between;
 }
 .buttons{
@@ -152,9 +153,9 @@ input {
     
 }
 .sec{
-    height: 150px;
-    width: 100px;
-    padding: 5px;
+    height: 170px;
+    width: 130px;
+    padding: 15px;
     margin: 8px;
     border: 1px solid  hsl(231, 11%, 63%);
     border-radius: 5px;
@@ -252,13 +253,16 @@ input:checked + .slider:before{
     font-size: 14px;
 }
 .check input{
-    width: 14%;
+    padding-top: 5px;
+    width: 12%;
+    margin: 10px;
 }
 .in{
     width: 67%;
 }
 .price{
-    width: 8%;
+    width: 15%;
+
 }
 
 .in h4{
@@ -340,7 +344,7 @@ input:checked + .slider:before{
 
 .thank-you{
     text-align: center;
-    padding: 40px;
+    padding: 10px;
 }
 .thank-you h1{
     color: hsl(243, 100%, 62%);
@@ -365,7 +369,7 @@ input:checked + .slider:before{
     }
     .sidebar{
         margin:0;
-        padding:10px;
+        /* padding:10px; */
         height:200px;
         width: 100%;
         display: flex;
