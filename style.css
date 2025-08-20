@@ -1,0 +1,436 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(218, 100%, 97%);
+    font-family: "Kumbh Sans", "Ubuntu", sans-serif;
+}
+
+.container {
+    width: 60%;
+    margin: 30px auto;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(0, 100%, 100%);
+    border-radius: 10px;
+}
+
+.sidebar {
+    height: 550px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    background-image: url(bg-sidebar-desktop.svg);
+    gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+ 
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: 200;
+}
+
+.sidebar a.active-step .step-number{
+    background-color: white;
+    color: hsl(243, 100%, 62%);
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.sidebar .text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    font-weight: 100;
+}
+.serial{
+    color: hsl(206, 94%, 87%);
+    font-weight: 150;
+    line-height: 1;
+}
+
+.step-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(228, 100%, 84%);
+    color: white;
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 50px;
+    height: 50px;
+    font-weight: 300;
+}
+
+p {
+    color: hsl(213, 96%, 18%);
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.form {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    justify-content: space-between;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 20px;
+}
+.prev, .next {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.prev {
+    background-color: transparent;
+    color: hsl(231, 11%, 63%);
+}
+
+.next {
+    color: white;
+    background-color: hsl(213, 96%, 18%);
+}
+
+.heading {
+    padding-bottom: 40px;
+}
+
+.heading h1 {
+    color: hsl(213, 96%, 18%);
+}
+
+.heading p {
+    color: hsl(231, 11%, 63%);
+    font-weight: 400;
+}
+
+
+input {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid hsl(231, 11%, 63%);
+}
+.error-message{
+    color: hsl(354, 84%, 57%);
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: -8px;
+    margin-bottom: 10px;
+    display: none;
+}    
+
+.step{
+    display: none;
+}
+.step.active{
+    display: block;
+}
+
+.plans{
+    display: flex;
+    
+}
+.sec{
+    height: 150px;
+    width: 100px;
+    padding: 5px;
+    margin: 8px;
+    border: 1px solid  hsl(231, 11%, 63%);
+    border-radius: 5px;
+    cursor: pointer;
+}
+img{
+    padding-bottom: 30px;
+}
+.sec h4{
+    color: hsl(213, 96%, 18%);
+}
+.sec p{
+    color: hsl(231, 11%, 63%);
+    font-weight: 400;
+}
+.sec:hover{
+    border: 1px solid hsl(243, 100%, 62%);
+}
+.sec.selected{
+    border: 2px solid hsl(243, 100%, 62%);
+    background-color: hsl(206, 94%, 97%);
+}
+.billing-toggle{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.billing-label{
+    font-weight: bold;
+    color: hsl(213, 96%, 18%);
+}
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+.switch input{
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(231, 11%, 63%);
+    transition: .4s;
+    border-radius: 24px;
+}
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider{
+    background-color: hsl(213, 96%, 18%);
+}
+input:checked + .slider:before{
+    transform: translateX(26px);
+}
+
+.offer{
+    display: block;
+    font-size: 12px;
+    color: hsl(243, 100%, 62%);
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.check{
+    display: flex;
+    align-items: center;
+    height: auto;
+    width: auto;
+    max-width: 500px;
+    border: 1px solid hsl(231, 11%, 63%);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: white;
+    font-size: 14px;
+}
+.check input{
+    width: 14%;
+}
+.in{
+    width: 67%;
+}
+.price{
+    width: 8%;
+}
+
+.in h4{
+    color: hsl(243, 100%, 62%);
+
+}
+.in p{
+    color: hsl(231, 11%, 63%);
+}
+.check:hover{
+    border: 1px solid hsl(243, 100%, 62%);
+    background-color: hsl(206, 94%, 97%);
+}
+
+.step-3{
+    flex-direction: column;
+}
+.step-3.active{
+    display: flex;
+}
+.summary-plan{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 1px solid hsl(231, 11%, 63%);
+}
+.summary-plan a{
+    font-size: 14px;
+    color: hsl(243, 100%, 62%);
+    cursor: pointer;
+}
+.summary-plan a:hover{
+    color: hsl(228, 45%, 44%);
+}
+
+.summary-plan,
+.summary-addons,
+.summary-total{
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 1px solid hsl(231, 11%, 63%);
+}
+.summary-addons{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid hsl(231, 11%, 63%);
+    padding-top: 10px;
+}
+.summary-addon-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: hsl(231, 11%, 63%);
+}
+.summary-addon-row .addon-price{
+    color: hsl(213, 96%, 18%);
+    font-weight: bold;
+}
+.summary-total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: hsl(231, 11%, 63%);
+    background-color: hsl(206, 94%, 97%);
+    border-radius: 6px;
+}
+.summary-total .total-price{
+    color: hsl(243, 100%, 62%);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.thank-you{
+    text-align: center;
+    padding: 40px;
+}
+.thank-you h1{
+    color: hsl(243, 100%, 62%);
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.thank-you p{
+    font-size:  16px;
+    color: hsl(213, 96%, 18%);
+}
+
+@media (max-width: 768px){
+    .container{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        position: relative;
+    }
+    .sidebar{
+        margin:0;
+        padding:10px;
+        height:200px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        background-image: url(bg-sidebar-mobile.svg);
+        background-size: cover;
+        background-position: center;
+        gap: 10px;
+        border-radius: 0;
+        position: relative;
+        z-index: 1;
+    }
+    .sidebar a{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .step-number{
+        margin-top: 20px;
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    .sidebar .text{
+        display: none;
+    }
+    .form{
+        top: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        background: white;
+        border-radius: 10px;;
+        padding: 20px;
+        position: absolute;
+        z-index: 2;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .plans{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .sec{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+    }
+    .sec img{
+        width: 40px;
+        padding-bottom: 0;
+    }
+    .check{
+        width: 100%;
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+    .prev
+    .next{
+        width: 100%;
+        font-size: 16px;
+        text-align: center;
+    }
+}

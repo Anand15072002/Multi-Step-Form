@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="info">
+                <a href="#">
+                    <span class="step-number">1</span>
+                    <div class="text">
+                        <span class="serial">STEP 1</span>
+                        <h4>YOUR INFO</h4>
+
+                    </div>
+                </a>
+            </div>
+            <div class="plan">
+                <a href="#">
+                    <span class="step-number">2</span>
+                    <div class="text">
+                        <span class="serial">STEP 2</span>
+                        <h4>SELECT PLAN</h4>
+                    </div>
+                </a>
+            </div>
+            <div class="add">
+                <a href="#">
+                    <span class="step-number">3</span>
+                    <div class="text">
+                        <span class="serial">STEP 3</span>
+                        <h4>ADD-ONS</h4>
+                    </div>
+                </a>
+            </div>
+            <div class="summary">
+                <a href="#">
+                    <span class="step-number">4</span>
+                    <div class="text">
+                        <span class="serial">STEP 4</span>
+                        <h4>SUMMARY</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="form">
+            <div class="content step step-1 active">
+                <div class="heading">
+                    <h1>Personal info</h1>
+                    <p>Please provide your name, email address, and phone number.</p>
+                </div>
+                <p>Name</p>
+                <input type="text" placeholder="e.g.Stephen King" />
+                <span class="error-message">This field is important</span>
+
+                <p>Email Address</p>
+                <input type="email" placeholder="e.g.stephenking@lorem.com" />
+                <span class="error-message">This field is important</span>
+
+                <p>Phone Number</p>
+                <input type="number" placeholder="e.g.+1 234 567 890" />
+                <span class="error-message">This field is important</span>
+
+            </div>
+
+            <div class="content step step-2">
+                <div class="heading">
+                    <h1>Select your plan</h1>
+                    <p>You have the option of monthly and yearly billing.</p>
+                </div>
+                <div class="plans">
+                    <div class="sec" data-monthly="$9/mo" data-yearly="$90/yr">
+                        <img src="icon-arcade.svg"/>
+                        <h4>Arcade</h4>
+                        <p>$9/mo</p>
+                        <span class="offer"></span>
+                    </div>
+
+                    <div class="sec" data-monthly="$12/mo" data-yearly="$120/yr">
+                        <img src="icon-advanced.svg"/>
+                        <h4>Advance</h4>
+                        <p>$12/mo</p>
+                        <span class="offer"></span>
+                    </div>
+
+                    <div class="sec" data-monthly="$15/mo" data-yearly="$150/yr">
+                        <img src="icon-pro.svg"/>
+                        <h4>Pro</h4>
+                        <p>$15/mo</p>
+                        <span class="offer"></span>
+                    </div>
+                </div>
+                <div class="billing-toggle">
+                    <span class="billing-label">Monthly</span>
+                    <label class="switch">
+                        <input type="checkbox" id="billingSwitch">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="billing-label">Yearly</span>
+                </div>
+            </div>
+
+            <div class="content step step-3">
+                <div class="heading">
+                    <h1>Pick add-ons</h1>
+                    <p>Add-ons help enhance your gaming experiance.</p>
+                </div>
+                <label class="check">
+                    <input type="checkbox" />
+                    <div class="in">
+                        <h4>Online service</h4>
+                        <p>Acces to multiplayer games</p>
+                    </div>
+                    <p class="price" data-monthly="+$1/mo" data-yearly="+$10/yr">+$10/yr</p>
+                </label>
+                <label class="check">
+                    <input type="checkbox" />
+                    <div class="in">
+                        <h4>Larger storage</h4>
+                        <p>Extra 1TB of cloud save</p>
+                    </div>
+                    <p class="price" data-monthly="+$2/mo" data-yearly="+$20/yr">+$20/yr</p>
+                </label>
+                <label class="check">
+                    <input type="checkbox" />
+                    <div class="in">
+                        <h4>Customizable profile</h4>
+                        <p>Custom theme on your profile</p>
+                    </div>
+                    <p class="price" data-monthly="+$2/mo" data-yearly="+$20/yr">$20/yr</p>
+                </label>
+
+            </div>
+
+            <div class="content step step-4">
+                <div class="heading">
+                    <h1>Finishing up</h1>
+                    <p>Double-check everything looks Ok before confirming</p>
+                </div>
+                <div id="summary-content"></div>
+            </div>
+            <div class="buttons">
+                <button class="prev" style="display:none;">Go Back</button>
+                <button class="next">Next Step</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
